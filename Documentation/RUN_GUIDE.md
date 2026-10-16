@@ -1,8 +1,8 @@
 # Inputs and reproduction boundaries
 
-The static `Results/` folder is an unchanged archival snapshot, not output from a new run. Packages in `requirements.txt` are compatibility ranges (with selected packages pinned), not the exact original environment lockfile. No clean-environment end-to-end reproduction is claimed.
+Most `Results/` folders retain stored historical outputs. `Results/attribute_free_corrected/` contains the new verified fold-aligned rerun and must be distinguished from the superseded historical comparison. Packages in `requirements.txt` are compatibility ranges (with selected packages pinned), not the exact original environment lockfile. No clean-environment end-to-end reproduction is claimed.
 
-## Local authorized inputs — ignored by git
+## Local authorized inputs â€” ignored by git
 
 ```
 basic_slice_prem/
@@ -27,7 +27,7 @@ Run standalone scripts from the repository root:
 - `python Code/multimodel_external_validation.py`: earlier/secondary nested and transport workflow, also requiring authorized `RIPAS_DATA_PATH`.
 - `python Code/nhamcs_external_validation.py`: separately obtained CDC public-use file set via `NHAMCS_DATA_PATH`; consumes the preceding script's saved source rankings/thresholds. Its imported base module also requires `RIPAS_DATA_PATH`. Without authorized private inputs those dependencies cannot be reproduced from this repository alone.
 
-The attribute-free extension is not supplied pending the fold-aligned rerun described in `REVIEW_STATUS.md`. Do not treat the absent file as an invitation to reuse historical settings across unmatched partitions.
+The corrected attribute-free driver is supplied in `Code/attribute_free/`. It performs fresh training-only selection and does not import settings from the historical log. See `ATTRIBUTE_FREE_CORRECTION.md`.
 
 Changes during packaging were limited to local path constants, notebook metadata/output removal and documentation. Statistical logic was not silently amended. Numerical tables were copied unchanged. Provenance and distributed-file hashes are included.
 

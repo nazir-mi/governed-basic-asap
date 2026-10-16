@@ -1,0 +1,12 @@
+manuscript_locator,analysis,archive_path
+Table 3,Governance definitions,Documentation/GOVERNANCE_PARAMETERS.csv
+Table 4,P1–P4 configuration definitions,Documentation/PROVENANCE_CONFIGURATIONS.csv
+Table 5,13 common-comparison slices,Results/comparative/table_IX_top_slices_by_method_with_governance.csv
+Table 6 / Figure 2,Common discovery and complete qualification,Results/comparative/05b_comparative_summary_complete_ASAP.csv
+Table 7 / Figure 3,Guardrail and coefficient sensitivity,Results/supporting/nb8_asap_guardrail_ablation_summary.csv; Results/supporting/nb8_asap_constrained_weight_grid_summary.csv
+Table 8 / Figure 4,Exploratory full-cohort repair,Results/supporting/nb9_provenance_placement_ablation_report.csv
+Table 9,Locked-holdout reanalysis,Results/confirmatory/
+Table 10 / Figures 5–6,Primary profile-cluster RIPAS external analysis,Results/governed_leakage_safe/
+Table 11 / Figure 7,Secondary NHAMCS and row-bootstrap results,Results/nhamcs_external_validation/; Results/external_validation/
+Table 12 / Figure 8,Corrected fold-aligned attribute-free robustness,Results/attribute_free_corrected/; Figures/attribute_free/Figure8_Corrected_Endpoints.svg
+Figure 9,"Separate historical concealed-clinical-rule construct experiment, not rerun",Results/attribute_free_historical/concealed_group_experiment_summary.csv; Figures/attribute_free/Figure9_Historical_Construct.svg

@@ -1,15 +1,15 @@
 path,reason
-Results/attribute_free_fairness/analysis_manifest.json,Withheld pending fold-aligned selection and rerun; no corrected-result claim
-Results/attribute_free_fairness/attribute_free_model_summary.csv,Withheld pending fold-aligned selection and rerun; no corrected-result claim
-Results/attribute_free_fairness/attribute_free_outer_fold_results.csv,Withheld pending fold-aligned selection and rerun; no corrected-result claim
-Results/attribute_free_fairness/attribute_free_registry_slice_results.csv,Withheld pending fold-aligned selection and rerun; no corrected-result claim
-Results/attribute_free_fairness/attribute_free_tail_bootstrap.csv,Withheld pending fold-aligned selection and rerun; no corrected-result claim
-Results/attribute_free_fairness/concealed_group_experiment_results.csv,Withheld pending fold-aligned selection and rerun; no corrected-result claim
-Results/attribute_free_fairness/concealed_group_experiment_summary.csv,Withheld pending fold-aligned selection and rerun; no corrected-result claim
+Results/attribute_free_fairness/analysis_manifest.json,Superseded historical path; corrected aggregates are supplied under Results/attribute_free_corrected/ and selected historical summaries under Results/attribute_free_historical/
+Results/attribute_free_fairness/attribute_free_model_summary.csv,Superseded historical path; corrected aggregates are supplied under Results/attribute_free_corrected/ and selected historical summaries under Results/attribute_free_historical/
+Results/attribute_free_fairness/attribute_free_outer_fold_results.csv,Superseded historical path; corrected aggregates are supplied under Results/attribute_free_corrected/ and selected historical summaries under Results/attribute_free_historical/
+Results/attribute_free_fairness/attribute_free_registry_slice_results.csv,Superseded historical path; corrected aggregates are supplied under Results/attribute_free_corrected/ and selected historical summaries under Results/attribute_free_historical/
+Results/attribute_free_fairness/attribute_free_tail_bootstrap.csv,Superseded historical path; corrected aggregates are supplied under Results/attribute_free_corrected/ and selected historical summaries under Results/attribute_free_historical/
+Results/attribute_free_fairness/concealed_group_experiment_results.csv,Superseded historical path; corrected aggregates are supplied under Results/attribute_free_corrected/ and selected historical summaries under Results/attribute_free_historical/
+Results/attribute_free_fairness/concealed_group_experiment_summary.csv,Superseded historical path; corrected aggregates are supplied under Results/attribute_free_corrected/ and selected historical summaries under Results/attribute_free_historical/
 Results/external_validation/analysis_manifest.json,Mixed analysis manifest includes RIPAS-derived summaries
 Results/external_validation/ripas_external_results.csv,RIPAS-derived aggregate withheld pending explicit custodian/institutional sharing permission
 Results/external_validation/ripas_paired_bootstrap_deltas.csv,RIPAS-derived aggregate withheld pending explicit custodian/institutional sharing permission
 Results/governed_leakage_safe/analysis_manifest.json,Mixed analysis manifest includes RIPAS-derived summaries
 Results/governed_leakage_safe/ripas_cluster_bootstrap_deltas.csv,RIPAS-derived aggregate withheld pending explicit custodian/institutional sharing permission
 Results/governed_leakage_safe/ripas_transport_and_recalibration.csv,RIPAS-derived aggregate withheld pending explicit custodian/institutional sharing permission
-Code/attribute_free_fairness_evaluation.py,Historical affected extension quarantined locally with its results
+Code/attribute_free_fairness_evaluation.py,Superseded historical runner; use Code/attribute_free/resolve_attribute_free.py for corrected evaluation
