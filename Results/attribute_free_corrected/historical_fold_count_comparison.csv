@@ -1,0 +1,6 @@
+outer_fold,n_aligned,events_aligned,train_test_profile_overlap,n_historical,events_historical
+1,40850,12732,0,40899,12819
+2,40848,12732,0,41051,12726
+3,40850,12732,0,41057,13017
+4,40850,12732,0,40370,12537
+5,40849,12732,0,40870,12561

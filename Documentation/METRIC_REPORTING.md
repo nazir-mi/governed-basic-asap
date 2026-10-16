@@ -22,7 +22,7 @@ Figure 6 shows mean transported risk versus observed RIPAS prevalence, not a rel
 
 The primary locked-test threshold is 0.315, not the 0.48 threshold from a different historical operating-point analysis. The repaired calibration slope is 1.00614, not 1.00006. The original stored results were not changed. The manuscript now includes intercept and ECE10 rows so that the evaluation methods and displayed results can be traced directly.
 
-These editorial corrections do not resolve the separate fold/selection-log alignment concern described in `REVIEW_STATUS.md`. The historical attribute-free extension remains excluded; no new corrected fairness result is claimed.
+The earlier editorial corrections were followed by a new fold-aligned attribute-free rerun. Its corrected aggregates are in `Results/attribute_free_corrected/`; superseded values are separated from the default comparison. See `ATTRIBUTE_FREE_CORRECTION.md` and `REVIEW_STATUS.md`.
 
 ## Internal versus external effect attribution
 
@@ -32,4 +32,4 @@ The previous manuscript range 0.0065–0.0581 was attributed to internal sensiti
 
 The primary grouped transport implementation differs from the primary locked-test ECE10 convention: it uses an encounter-count-weighted absolute error over quantile bins. The revised Methods distinguishes these stage-specific calibration summaries rather than claiming a single interchangeable ECE implementation.
 
-Table/figure numbers refer to the DTC3 manuscript revision and should be reconciled again if the manuscript is renumbered.
+Table 12 and Figure 8 now use the corrected attribute-free rerun. Figure 9 reports the separate historical concealed-rule construct experiment. Other stage-specific table numbers and numerical outputs are retained.

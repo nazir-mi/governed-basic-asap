@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-ALLOWED = {'.py', '.ipynb', '.csv', '.json', '.md', '.txt'}
+ALLOWED = {'.py', '.ipynb', '.csv', '.json', '.md', '.txt', '.svg'}
 FORBIDDEN_COLUMNS = {'source_row', 'profile_group', 'patient_id', 'encounter_id',
                      'subject_id', 'probability', 'oof_pred_proba', 'y'}
 SECRET = re.compile(r'gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|AKIA[0-9A-Z]{16}')
@@ -40,6 +40,8 @@ for p in files:
     if len(data) > 10_000_000:
         fail('Unexpected large file: '+rel)
     text = data.decode('utf-8-sig')
+    if p.suffix == '.svg' and re.search(r'<script|https?://(?!www.w3.org)|(?:href|xlink:href)=', text, re.I):
+        fail('Active or external SVG content: '+rel)
     if SECRET.search(text):
         fail('Potential credential: '+rel)
     if re.search(r'[A-Za-z]:[\\/]Users[\\/]', text):

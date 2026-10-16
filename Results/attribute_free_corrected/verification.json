@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "coverage": [
+    {
+      "model": "LightGBM",
+      "folds": 5,
+      "arms": 5,
+      "test_encounters_per_arm": 204247,
+      "prediction_rows": 1021235
+    },
+    {
+      "model": "Logistic Regression",
+      "folds": 5,
+      "arms": 5,
+      "test_encounters_per_arm": 204247,
+      "prediction_rows": 1021235
+    },
+    {
+      "model": "Random Forest",
+      "folds": 5,
+      "arms": 5,
+      "test_encounters_per_arm": 204247,
+      "prediction_rows": 1021235
+    },
+    {
+      "model": "XGBoost",
+      "folds": 5,
+      "arms": 5,
+      "test_encounters_per_arm": 204247,
+      "prediction_rows": 1021235
+    }
+  ],
+  "historical_files_unchanged": 10,
+  "input_checksums_unchanged": true,
+  "outer_profile_overlap": 0,
+  "inner_selection_profile_overlap": 0,
+  "settings_imported_from_historical_log": false,
+  "bootstrap_rows": 64,
+  "limitations": "profile grouping is not patient identity; conditional bootstrap does not repeat model selection"
+}

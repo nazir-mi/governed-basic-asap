@@ -30,3 +30,8 @@ Run standalone scripts from the repository root:
 The attribute-free extension is not supplied pending the fold-aligned rerun described in `REVIEW_STATUS.md`. Do not treat the absent file as an invitation to reuse historical settings across unmatched partitions.
 
 Changes during packaging were limited to local path constants, notebook metadata/output removal and documentation. Statistical logic was not silently amended. Numerical tables were copied unchanged. Provenance and distributed-file hashes are included.
+
+
+## Corrected attribute-free rerun
+
+Use `Code/attribute_free/resolve_attribute_free.py`, not an imported historical selection log. The full command order, inputs, versions and interpretation limits are in `ATTRIBUTE_FREE_CORRECTION.md`. Local encounter-level outputs must remain in ignored `Local_Outputs/`.

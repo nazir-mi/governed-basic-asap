@@ -6,11 +6,11 @@ Code, historical slice-registry metadata and screened non-RIPAS aggregate output
 
 ## Status and scope
 
-Prepared on 16 October 2026 for a **private** repository owned by `nazirkaoje777-dotcom`. This is a partial review snapshot, not an unrestricted data release, a complete reproduction of every manuscript table, or a new experiment run. No patient-level records or fitted models are included. Publication and reuse permissions remain subject to the relevant authors, institution and data custodians.
+Prepared on 16 October 2026 for a **private** repository owned by `nazirkaoje777-dotcom`. This is a partial review snapshot, not an unrestricted data release, a complete reproduction of every manuscript table, or a complete new reproduction. The corrected attribute-free comparison is a new experiment run, explicitly separated from stored historical results. No patient-level records or fitted models are included. Publication and reuse permissions remain subject to the relevant authors, institution and data custodians.
 
 ### Included
 
-- `Code/`: five analysis scripts. Directory paths were made repository-relative; statistical logic was not changed.
+- `Code/`: analysis scripts, including the new `Code/attribute_free/` rerun. Path adaptations and unchanged statistical functions are documented in `Documentation/ATTRIBUTE_FREE_CORRECTION.md`.
 - `basic_slice_prem/Notebooks/`: ten historical notebooks with outputs, attachments and execution metadata removed.
 - `Registry/`: the historical 29-row slice-level registry, labelled to distinguish original qualitative judgments from the separate later clinician questionnaire.
 - `Results/`: stored non-RIPAS aggregate tables, grouped by analysis stage. Mixed and negative findings are retained.
@@ -21,7 +21,7 @@ Prepared on 16 October 2026 for a **private** repository owned by `nazirkaoje777
 
 - All patient records, row-level outcomes/predictions, profile identifiers, row indexes, membership matrices, trained models and runtime outputs.
 - All RIPAS-derived result tables and mixed external-analysis manifests, pending explicit permission for third-party repository sharing. Code describing harmonization is included; ethics approval alone is not treated as redistribution permission.
-- The affected attribute-free extension and its result bundle, pending fold-aligned selection and rerun. The issue is documented rather than silently patched or presented as resolved.
+- Encounter-level audit outputs from the corrected attribute-free rerun. Only screened code and aggregate results are included; the superseded comparison is labelled historical.
 - Clinician responses, adjudications, identifying review information, supervisor comments, correspondence, manuscript drafts, approval letters/signatures and third-party paper PDFs.
 
 See `Documentation/REVIEW_STATUS.md` and `Documentation/DATA_SHARING.md` before using this repository to support a manuscript claim.
@@ -35,7 +35,10 @@ See `Documentation/REVIEW_STATUS.md` and `Documentation/DATA_SHARING.md` before 
 - `Results/external_validation/`: source-cohort nested results/rankings only; RIPAS outputs are withheld.
 - `Results/nhamcs_external_validation/`: stored NHAMCS aggregate evaluation. Source records are not redistributed; the script has source-training dependencies described in the run guide.
 
-No stored numerical result was recomputed or changed during packaging. This snapshot does not establish demographic fairness, universal repair benefit, patient-level independence, prospective clinical effectiveness or deployment readiness.
+The corrected attribute-free comparison was newly run with shared folds and fresh training-only selection. Its joint robustness endpoint failed in all four families. Other stored numerical results were not recomputed or silently replaced during this update. This snapshot does not establish demographic fairness, universal repair benefit, patient-level independence, prospective clinical effectiveness or deployment readiness.
+
+- `Results/attribute_free_corrected/`: verified new repair comparison; see `Documentation/ATTRIBUTE_FREE_CORRECTION.md`.
+- `Results/attribute_free_historical/`: superseded summary and separate historical concealed-rule construct summary.
 
 ## Data access and verification
 

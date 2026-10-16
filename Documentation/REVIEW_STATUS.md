@@ -1,37 +1,63 @@
 # Scientific review and repository scope
 
-## Attribute-free extension: quarantined, not corrected
+## Corrected attribute free repair evaluation
 
-The historical governed script assigns outer folds through deterministic profile-hash `grouped_splits`. The historical attribute-free extension instead uses `StratifiedGroupKFold` and retrieves repair strength, top-K and thresholds from the governed selection log by model name and fold number. The same fold number does not prove the same train/test records. Outcome-dependent settings may therefore have been selected using records that later appear in an extension test fold.
+A new fold-aligned evaluation was completed on 17 October 2026. All four model
+families and five weighting arms share a frozen, row-indexed outer-fold
+assignment. Repair strength and top-K are selected afresh inside each outer
+training set; no settings are imported from the historical selection log.
+Estimator seeds are matched across arms. Exact predictor profiles do not cross
+outer train/test or inner fit/selection boundaries. The local integrity audit
+passed; its aggregate summary is included without encounter identifiers.
 
-This is a concrete code-level concern, not yet a quantified estimate of its effect on results. The historical extension code and entire result bundle remain local and are excluded from this snapshot. Their exclusion is a quality-control quarantine, not selective removal of an unfavourable result. No corrected fairness result is claimed.
+BASiC/ASAP met the retained joint robustness endpoint in 0 of 4 model families.
+Worst-registry-slice AUPRC point differences were negative and 10% CVaR
+log-loss differences positive in all four. Random Forest also exceeded the
+global AUPRC-loss tolerance. These are robustness results, not demographic
+fairness, deployment-readiness or clinical-effectiveness evidence.
 
-### Required repair before reinstatement
+## Historical provenance
 
-1. Save and verify a single outer-fold assignment indexed to the source row order and exact-profile groups; assert no profile crosses train/test.
-2. For every model and outer fold, perform all repair selection and threshold selection exclusively within that outer training set. Do not import outcome-dependent settings from differently assigned folds.
-3. Train ERM, BASiC/ASAP and all comparator arms using those same outer splits. Keep imputation, scaling, OOF weighting, ranking and any calibration inside the appropriate training partitions.
-4. Freeze predictions before evaluating the identical held-out rows and fixed registry; compute paired endpoint differences and the chosen uncertainty estimates.
-5. Regenerate affected tables, figures and manuscript text from the new run, retain the superseded local evidence, and document changes without optimizing for a desired win.
+The old attribute-free comparison reused outcome-dependent repair settings
+by model and fold number despite different saved fold populations. A saved
+governed prediction export is also incomplete and does not match the summary
+fold sizes. Current scripts alone do not establish which historical splitter
+produced each artifact; a specific splitter attribution is therefore withdrawn.
+The corrected run does not depend on those predictions or settings.
 
-Excluding a repository file does not correct the corresponding manuscript claim. Before submission, either complete this rerun or remove/qualify the affected comparison in the manuscript. Manuscript files were not edited as part of this upload.
+Superseded aggregate summaries are retained in `Results/attribute_free_historical/`.
+The separate concealed-clinical-group experiment remains historical and
+exploratory; its 8/12 recovery and 3/12 repair-success counts were not rerun.
+The corrected comparison changes fold alignment, refreshes selection and
+matches estimator seeds, so differences are not an isolated causal estimate
+of leakage removal alone. It is a retrospective re-evaluation of a previously
+developed registry, not untouched confirmation of discovery.
 
-## Other interpretation limits
+## Uncertainty and interpretation
 
-The original registry and notebooks are exploratory and retain historical development decisions. Later locked-holdout reanalysis does not erase prior exposure to the overall registry. Exact-profile grouping is not patient-level grouping without patient identifiers. Clinical conjunction recovery is not a demographic-fairness validation. Clinical definition review does not demonstrate model safety or clinical benefit.
+Corrected intervals use 400 paired exact-profile cluster bootstrap replicates
+within outer test folds and equal-weight five-fold metric means. They are
+pointwise, unadjusted for multiple comparisons and conditional on fitted
+predictions and fixed definitions; training and selection are not repeated.
+No patient identifier was available, so grouping cannot prove patient-level
+independence. The fixed registry does not cover every possible disadvantaged
+group, and clinical conjunction recovery is not demographic-fairness validation.
 
 ## Scope map
 
 | Analysis | Repository status |
 | --- | --- |
-| Historical discovery, adapted comparators and governance | Stored aggregate outputs included |
-| Historical repair and sensitivity analyses | Stored aggregate outputs included, labelled exploratory |
-| Locked-holdout reanalysis | Stored aggregate outputs included |
-| Comparator protocol exercise | Included with implementation-fidelity qualifications |
-| Governed internal grouped evaluation | Internal summaries included |
-| RIPAS transport, recalibration and uncertainty | Results withheld pending repository-sharing permission |
-| Earlier source-cohort nested results | Included; not interchangeable with primary grouped analysis |
-| NHAMCS external evaluation | Stored aggregate outputs included, no source records |
-| Attribute-free extension and related result bundle | Withheld pending fold-aligned rerun |
+| Historical discovery, adapted comparators and governance | Aggregate outputs retained |
+| Historical repair and sensitivity analyses | Exploratory outputs retained |
+| Locked-holdout reanalysis | Stored aggregate outputs retained |
+| Comparator protocol exercise | Implementation-fidelity qualifications retained |
+| Governed internal grouped evaluation | Earlier internal summaries retained, not silently replaced |
+| RIPAS transport, recalibration and uncertainty | Results withheld pending sharing permission |
+| NHAMCS external evaluation | Stored aggregates, no source records |
+| Corrected attribute-free repair comparison | New code, aggregate results and integrity audit included |
+| Historical concealed-rule construct experiment | Summary retained, explicitly not rerun |
 
-This upload does not constitute a new clean-environment reproduction. Syntax, checksums and disclosure patterns are checked separately from scientific validity.
+No patient records, individual predictions, group hashes, row assignments,
+selection-role assignments or membership matrices are released. Only the
+corrected attribute-free repair comparison was newly run; other analyses are
+stored historical results, not a newly reproduced complete manuscript.

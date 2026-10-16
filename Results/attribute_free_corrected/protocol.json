@@ -1,0 +1,85 @@
+{
+  "status": "protocol frozen before corrected model fitting",
+  "date": "2026-10-16",
+  "seed": 20260828,
+  "models": [
+    "Logistic Regression",
+    "Random Forest",
+    "XGBoost",
+    "LightGBM"
+  ],
+  "arms": [
+    "ERM",
+    "BASiC_ASAP",
+    "Class-balanced",
+    "Focal-style",
+    "CVaR-DRO"
+  ],
+  "outer_folds": "fresh single frozen StratifiedGroupKFold assignment indexed by source_row and exact predictor profiles; shared across all models and arms",
+  "historical_prediction_export": "incomplete and inconsistent with historical summary fold counts; not used to train, tune or define corrected predictions",
+  "selection": "fresh grouped 20% validation split wholly within each outer training set",
+  "configurations": [
+    [
+      0.0,
+      0
+    ],
+    [
+      0.5,
+      3
+    ],
+    [
+      1.0,
+      3
+    ],
+    [
+      2.0,
+      3
+    ],
+    [
+      0.5,
+      5
+    ],
+    [
+      1.0,
+      5
+    ],
+    [
+      2.0,
+      5
+    ]
+  ],
+  "selection_rule": "among admissible positive-lambda configurations choose greatest mean selected-slice sensitivity, then AUPRC, then lower Brier; otherwise ERM fallback",
+  "admissibility": {
+    "AUPRC_loss_max": 0.005,
+    "Brier_increase_max": 0.01
+  },
+  "ranking": "historical basic_ranking; 0.60 harm, 0.30 dual provenance, 0.10 support; fever_temp excluded",
+  "repair": "positive-outcome members only; normalized harm floor 0.1; weight cap 5",
+  "baseline_definitions": "historical two-stage class-balanced, focal-style gamma=2, and CVaR-style worst-20% upweighting; not custom differentiable objectives",
+  "matched_randomness": "identical estimator seed for all arms and all selection candidates within a fold",
+  "primary_summary": "differences between equal-weight means of five outer-fold metrics; fixed evaluable registry per fold",
+  "success_rule": "worst-registry AUPRC delta >0 AND 10% CVaR delta <0 AND global AUPRC delta >=-0.005 AND global Brier delta <=0.010",
+  "uncertainty": "400 paired exact-profile cluster bootstrap samples of frozen pooled OOF predictions; conditional on fitted pipelines, not a full selection-aware repeated training analysis",
+  "historical_results": "preserved unchanged; no outcome-based choice of corrected vs historical results",
+  "concealed_group": "separate historical construct experiment is not rerun or silently merged into the corrected comparison",
+  "limitations": [
+    "previously developed registry is fixed, not independently rediscovered",
+    "exact predictor profiles are not patient identifiers",
+    "non-demographic robustness is not demographic fairness"
+  ],
+  "versions": {
+    "numpy": "2.5.2",
+    "pandas": "3.0.1",
+    "sklearn": "1.9.0",
+    "xgboost": "3.4.1",
+    "lightgbm": "4.7.0"
+  },
+  "python": "3.12.14",
+  "input_sha256": {
+    "basic_slice_prem\\Data\\Raw\\triage_cleaned_working.csv": "b42573dc1b2f272bc292fa6913a02660c973ebfda26a412af28014838e46751f",
+    "basic_slice_prem\\Notebooks\\slice_membership.csv": "0b9b8d1b035567297701f7bea3a1ace9d293682859702837bdf3924274f5175b",
+    "BASiC_ASAP_Healthcare_Supplementary_Materials3\\Code\\attribute_free_fairness_evaluation.py": "9f4d23d029de84b8a5dcbb8b7d9f5d735af8e4acd6aa54b1328060d6f677933e",
+    "basic_slice_prem\\Governed_Leakage_Safe_Results\\internal_oof_predictions.csv": "8d66dd4b04c6f20e992912c2f720b990715af9f12f63e0727f8007316ea246d0"
+  },
+  "outer_assignment_sha256": "cd16d57e3beccb912c782a0abed1a81817cd0319d5495ce71bf14846eda16150"
+}
