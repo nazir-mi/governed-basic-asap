@@ -1,0 +1,5 @@
+method,top_k_used,complete_ASAP_eligible_slices,repairable_harmful_slices,repairability_precision,worst_slice_AUPRC,worst_slice_recall,mean_harm_score,max_harm_score,support_adequacy,replication_stability,clinical_plausibility,artifact_control,redundancy_control,membership_availability,coverage_pct_true,governance_score,top_slice
+BASiC_ASAP,10,5,5,0.5,0.5089415612355296,0.3409881697981907,0.10380659970162709,0.31971787119540496,1.0,1.0,0.6,0.9,1.0,1.0,56.79853397868114,0.8571428571428571,abdominal_pain_and_hr_missing
+SliceFinder_style,10,3,3,0.3,0.5089415612355296,0.3501259445843829,0.20777036684540223,0.31971787119540496,1.0,1.0,1.0,0.9,0.4,1.0,5.745880312228968,0.8,abdominal_pain_AND_hr_missing
+SliceLine_style,10,3,3,0.3,0.5089415612355296,0.5167364016736402,0.181289861976438,0.31971787119540496,1.0,1.0,0.9,1.0,0.4,1.0,46.318859636851975,0.7999999999999999,abdominal_pain_AND_hr_missing
+AFISP_inspired,5,0,0,0.0,0.6010358024448489,0.5958762886597938,0.10232678689959795,0.1522841554149255,1.0,1.0,0.4,0.6,1.0,1.0,52.613798506001174,0.7142857142857143,physiologic_instability

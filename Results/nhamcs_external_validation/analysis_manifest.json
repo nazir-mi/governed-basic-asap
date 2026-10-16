@@ -1,0 +1,29 @@
+{
+  "source": "CDC 2022 NHAMCS ED public-use file",
+  "rows": 16025,
+  "adult_rows": 12598,
+  "adult_admissions": 1945,
+  "outcome": "ADMITHOS == 1",
+  "features": [
+    "age",
+    "bp_diastole",
+    "bp_systolic",
+    "heart_rate",
+    "respiratory_rate",
+    "spo2",
+    "temperature_c",
+    "abdominal_pain",
+    "chest_pain",
+    "back_pain",
+    "headache",
+    "other_pain",
+    "cardiovascular_history",
+    "dm",
+    "ckd"
+  ],
+  "notes": [
+    "Negative NHAMCS sentinel codes treated as missing.",
+    "TEMPF stored in tenths of degrees Fahrenheit and converted to Celsius.",
+    "Models, Kaggle-derived repair weights, and thresholds locked before NHAMCS evaluation."
+  ]
+}

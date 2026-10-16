@@ -1,0 +1,7 @@
+# Availability wording for a private review repository
+
+After upload, replace the repository URL and commit below with verified values. Confirm the journal's reviewer-access procedure; a private link alone will not work for an unauthenticated reviewer.
+
+> Analysis code, historical slice-registry metadata and selected non-RIPAS aggregate outputs are held in a private review repository at [VERIFIED REPOSITORY URL], snapshot [COMMIT SHA]. Access for editorial assessment can be arranged through the corresponding author, subject to journal procedures. This repository is a partial review snapshot: it does not distribute patient-level data, RIPAS-derived results or the attribute-free comparison pending methodological verification. Kaggle and NHAMCS source records must be obtained from their original providers. RIPAS data and derived outputs remain subject to institutional and data-custodian restrictions.
+
+Only promise access arrangements that can actually be provided. Do not describe this private repository as publicly accessible or as supplying every paper result. If the journal requires anonymous review, use its confidential submission route or an approved blinded archive rather than a username-bearing GitHub URL. Any results required for editorial review must still be supplied through an authorized journal route.

@@ -1,0 +1,6 @@
+metric,numerator,denominator,percentage
+BASiC slices rediscovered by any competitor,3,10,30.0
+BASiC slices unique to BASiC,7,10,70.0
+AFISP_inspired slices accepted by BASiC,0,5,0.0
+SliceFinder_style slices accepted by BASiC,2,10,20.0
+SliceLine_style slices accepted by BASiC,3,10,30.0

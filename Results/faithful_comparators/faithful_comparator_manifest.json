@@ -1,0 +1,23 @@
+{
+  "rows": 142972,
+  "candidate_features": [
+    "age_group",
+    "sbp_group",
+    "heart_rate_group",
+    "resp_group",
+    "spo2_group",
+    "abdominal_pain",
+    "ckd",
+    "dm",
+    "unclassified",
+    "hr_missing"
+  ],
+  "min_support": 0.005,
+  "K": 10,
+  "slicefinder_source": "yeounoh/slicefinder author repository; vectorized compatibility implementation of degree<=2, epsilon=0.2 objective and support ordering",
+  "sliceline": "official sliceline 0.3.0, alpha=0.95, max_l=2; alpha increased from default 0.6 because default returned no qualifying slice in this search space",
+  "afisp": "published stability-analysis sequence with SIRUS-compatible frequent-path phenotype extraction; no public authors' turnkey code located",
+  "afisp_selected_alpha": 0.5,
+  "seed": 2026,
+  "elapsed_seconds": 33.687217473983765
+}

@@ -1,0 +1,8 @@
+component,permutation_importance_mean,permutation_importance_std
+harm_norm,1.0116916051996392,0.4030933517126139
+dual_source_evidence,0.05242857456026501,0.06168146043731627
+support_score,0.006468664255320436,0.016690693624797297
+clinical_plausibility,0.0,0.0
+stability_score,0.0,0.0
+artifact_risk,0.0,0.0
+redundancy_risk,0.0,0.0

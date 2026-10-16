@@ -1,0 +1,5 @@
+arm,provenance_in_ranking,provenance_in_weight_multiplier,selected_slices
+revised_P1_provenance_rank_only,1,0,"['abdominal_pain_and_hr_missing', 'ckd_and_spo2_missing', 'unclassified_and_vitals_missing_ge_3', 'tachypnea', 'htn', 'tachycardia', 'dm', 'hypoxia', 'chest_pain_and_ambulance', 'chd']"
+revised_P2_provenance_weight_only,0,1,"['abdominal_pain_and_hr_missing', 'tachypnea', 'htn', 'tachycardia', 'ckd_and_spo2_missing', 'dm', 'hypoxia', 'chest_pain_and_ambulance', 'chd', 'pneumonia']"
+revised_P3_provenance_both,1,1,"['abdominal_pain_and_hr_missing', 'ckd_and_spo2_missing', 'unclassified_and_vitals_missing_ge_3', 'tachypnea', 'htn', 'tachycardia', 'dm', 'hypoxia', 'chest_pain_and_ambulance', 'chd']"
+revised_P4_no_provenance,0,0,"['abdominal_pain_and_hr_missing', 'tachypnea', 'htn', 'tachycardia', 'ckd_and_spo2_missing', 'dm', 'hypoxia', 'chest_pain_and_ambulance', 'chd', 'pneumonia']"

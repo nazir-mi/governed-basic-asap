@@ -1,0 +1,4 @@
+Competitor,Shared with BASiC,BASiC slices rediscovered,Competitor slices also in BASiC,Jaccard similarity
+AFISP,0,0.0,0.0,0.0
+SliceFinder,3,0.5,0.03571428571428571,0.034482758620689655
+SliceLine,2,0.3333333333333333,0.041666666666666664,0.038461538461538464

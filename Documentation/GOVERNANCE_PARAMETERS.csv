@@ -1,0 +1,8 @@
+check,original_registry_repair,common_comparator_assessment
+Support,Registry: discovery ≥0.5% and validation ≥0.3%; Notebook 8 reuses pass_support.,Comparator: discovery count ≥714 (floored 0.5% cutoff).
+Harm and persistence,"Historical harm: validation loss lift >0.02, recall gap <−0.03, FN lift >0.02, or HCC lift >0.01. At least one adverse direction must also appear in both discovery and validation. Repair additionally requires current H >10⁻¹².",Current H >0; bootstrap support stability is assessed separately.
+Clinical plausibility,"One reviewer’s label: high=1, moderate=0.5, low=0; pass ≥0.5. These are encodings of qualitative labels, not rubric scores.","Name-based heuristic: clinical terms=1, operational/missingness terms=0.7, otherwise=0.4; pass ≥0.7. Not independent clinical review."
+Replication/stability,No independent bootstrap score is present in the repair registry; pass_persistence supplies one combined replication/stability check.,"50 row bootstraps of fixed-rule support; stability=max(0,min(1,1−SD(support)/mean(support))); pass ≥0.60."
+Artifact control,Unlikely=0; possible=0.5 with a monitoring flag; likely/confirmed=1 and vetoed.,Rule-name heuristic: operational/missingness only=1; mixed clinical/missingness=0.5; otherwise=0. Pass ≤0.5.
+Redundancy,Explicit registry redundancy flag must not indicate an alias/duplicate.,Largest pairwise membership Jaccard among method top-10 rules must be <0.50.
+Membership,Executable canonical membership must be available.,Membership rule must reconstruct a non-empty slice.

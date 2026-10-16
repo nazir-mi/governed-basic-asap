@@ -1,0 +1,5 @@
+arm,ranking_provenance,weight_provenance
+P1: ranking only,Yes: Equation (4),No: b_k=1
+P2: weighting only,No: renormalized harm/support,Yes: b_k=1.5 for dual
+P3: ranking and weighting,Yes: Equation (4),Yes: b_k=1.5 for dual
+P4: neither,No: renormalized harm/support,No: b_k=1

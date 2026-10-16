@@ -1,0 +1,16 @@
+diagnostic,value
+number_of_valid_weight_schemes,39.0
+number_of_unique_TOP5_membership_sets,3.0
+number_of_unique_TOP5_orderings,13.0
+number_of_unique_TOP7_membership_sets,3.0
+number_of_unique_TOP7_orderings,17.0
+number_of_unique_TOP10_membership_sets,1.0
+number_of_unique_TOP10_orderings,18.0
+minimum_TOP5_jaccard,0.6666666666666666
+median_TOP5_jaccard,1.0
+minimum_TOP7_jaccard,0.75
+median_TOP7_jaccard,1.0
+minimum_TOP10_jaccard,1.0
+median_TOP10_jaccard,1.0
+minimum_full_ranking_spearman,0.790909090909091
+median_full_ranking_spearman,0.9818181818181818

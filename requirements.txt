@@ -1,0 +1,12 @@
+# Compatibility ranges, NOT an exact lockfile of the original experiment environment.
+numpy>=1.26,<3
+pandas>=2.0,<3
+scipy>=1.11,<2
+scikit-learn>=1.4,<2
+xgboost==3.4.1
+lightgbm==4.7.0
+matplotlib>=3.8,<4
+openpyxl>=3.1,<4
+seaborn>=0.13,<1
+jupyterlab>=4,<5
+sliceline==0.3.0

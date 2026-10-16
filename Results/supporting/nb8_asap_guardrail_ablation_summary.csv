@@ -1,0 +1,6 @@
+configuration,removed_rule,n_eligible_slices,n_newly_admitted_vs_full_ASAP,newly_admitted_slices,n_implausible_in_eligible_set,n_replication_failures_in_eligible_set,n_stability_failures_in_eligible_set,n_artifact_in_eligible_set,n_redundant_in_eligible_set,patients_covered,pct_patients_covered,mean_positive_harm,max_harm
+full_ASAP,none,11,0,[],0,0,0,0,0,122032,59.747266789720285,0.10804560036879626,0.2907546821246221
+without_plausibility,plausibility,11,0,[],0,0,0,0,0,122032,59.747266789720285,0.10804560036879626,0.2907546821246221
+without_replication_stability,replication,11,0,[],0,0,0,0,0,122032,59.747266789720285,0.10804560036879626,0.2907546821246221
+without_artifact_veto,artifact,12,1,['err_unclassified_and_missingness'],0,0,0,1,0,122032,59.747266789720285,0.1024354259903139,0.2907546821246221
+without_redundancy_control,redundancy,12,1,['err_hr_missing_and_abdominal_pain'],0,0,0,0,1,122032,59.747266789720285,0.12327135718178174,0.2907546821246221

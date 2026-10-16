@@ -1,0 +1,17 @@
+slice_name,mismatched_rows
+arrival_mode_unknown,0
+back_pain,0
+abdominal_pain_and_hr_missing,0
+tachypnea,0
+fever_temp,0
+chest_pain_and_ambulance,0
+headache,0
+ckd_and_spo2_missing,0
+cough,0
+chd,0
+tachycardia,0
+htn,0
+unclassified_and_vitals_missing_ge_3,0
+hypoxia,0
+dm,0
+pneumonia,0

@@ -1,0 +1,2 @@
+model_arm,global_AUROC,global_AUPRC,global_Recall_at_0_5,positive_prevalence,number_of_evaluated_slices,worst_slice_name,worst_slice_AUPRC,worst_slice_Recall_at_0_5
+raw_erm,0.8001724719259385,0.6295205110450915,0.49345481202220126,0.31167178014230695,16,arrival_mode_unknown,0.1251169418762254,0.0

@@ -1,0 +1,8 @@
+Statistic,Value
+Total unique slices,92.0
+Total BASiC slices,6.0
+BASiC slices shared with at least one competitor,3.0
+BASiC slices unique to BASiC,3.0
+Percentage of BASiC slices rediscovered,50.0
+Percentage of BASiC slices unique,50.0
+Slices discovered by all four methods,0.0

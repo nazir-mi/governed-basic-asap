@@ -1,0 +1,23 @@
+{
+  "analysis_design": "development-only five-fold OOF ranking; validation-only threshold selection; locked test evaluation",
+  "historical_data_caveat": "The dataset and candidate registry had been examined previously; this is a leakage-reduced internal re-analysis, not an untouched external confirmation.",
+  "rows": 204247,
+  "outcome_positive": 63660,
+  "outcome_prevalence": 0.311681444525501,
+  "seeds": [
+    2026,
+    42,
+    314,
+    2718,
+    8675309
+  ],
+  "primary_seed": 2026,
+  "n_boot": 1000,
+  "top_k": 10,
+  "lambda_repair": 1.5,
+  "weight_cap": 5.0,
+  "excluded_artifact_slices": [
+    "fever_temp"
+  ],
+  "membership_mismatches": 0
+}

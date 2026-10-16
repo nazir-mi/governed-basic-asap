@@ -1,0 +1,31 @@
+method,rank,slice_name,algorithm_statistic
+SliceFinder_official_objective,1,age_group=80+,0.21145306915296028
+SliceFinder_official_objective,2,abdominal_pain=0 & age_group=80+,0.2096266453716656
+SliceFinder_official_objective,3,age_group=80+ & ckd=0,0.21533173015983254
+SliceFinder_official_objective,4,age_group=80+ & unclassified=0,0.20668694217336397
+SliceFinder_official_objective,5,age_group=80+ & dm=0,0.21013983582451917
+SliceFinder_official_objective,6,age_group=80+ & heart_rate_group=60-100,0.22222631070483656
+SliceFinder_official_objective,7,age_group=80+ & spo2_group=95-100,0.20602304143243563
+SliceFinder_official_objective,8,age_group=80+ & hr_missing=0,0.2345106414852516
+SliceFinder_official_objective,9,age_group=80+ & resp_group=12-20,0.24754128270019252
+SliceFinder_official_objective,10,ckd=1 & heart_rate_group=60-100,0.20774938170481955
+SliceLine_official_0.3.0,1,resp_group=missing,0.02222981837991153
+SliceLine_official_0.3.0,2,sbp_group=missing,0.022048105960176395
+SliceLine_official_0.3.0,3,hr_missing=1,0.021402050543371867
+SliceLine_official_0.3.0,4,resp_group=missing & hr_missing=1,0.020854831434324622
+SliceLine_official_0.3.0,5,sbp_group=missing & resp_group=missing,0.020582673625321943
+SliceLine_official_0.3.0,6,sbp_group=missing & hr_missing=1,0.020251168300337713
+SliceLine_official_0.3.0,7,resp_group=missing & abdominal_pain=0,0.01255426706430722
+SliceLine_official_0.3.0,8,sbp_group=missing & abdominal_pain=0,0.01232649297474829
+SliceLine_official_0.3.0,9,abdominal_pain=0 & hr_missing=1,0.011511176970059184
+SliceLine_official_0.3.0,10,dm=1,0.002029277059448026
+AFISP_published_protocol,1,resp_group_12-20 <= 0.5,0.3017666435869999
+AFISP_published_protocol,2,age_group_65-79 > 0.5,0.48626121198862393
+AFISP_published_protocol,3,resp_group_missing > 0.5,0.2984259736765398
+AFISP_published_protocol,4,hr_missing_0 <= 0.5,0.3033902983186513
+AFISP_published_protocol,5,sbp_group_missing > 0.5,0.30064176964566125
+AFISP_published_protocol,6,hr_missing_1 > 0.5,0.3033902983186513
+AFISP_published_protocol,7,age_group_80+ > 0.5,0.491664737207687
+AFISP_published_protocol,8,dm_0 <= 0.5,0.33844573891376817
+AFISP_published_protocol,9,dm_1 > 0.5,0.33844573891376817
+AFISP_published_protocol,10,age_group_18-39 <= 0.5 AND age_group_40-64 <= 0.5,0.4885873763424784

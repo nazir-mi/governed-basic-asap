@@ -1,0 +1,6 @@
+scheme,selected_slices,n_overlap_with_original_TOP10,overlap_pct
+original,"['abdominal_pain_and_hr_missing', 'ckd_and_spo2_missing', 'unclassified_and_vitals_missing_ge_3', 'tachypnea', 'htn', 'tachycardia', 'dm', 'hypoxia', 'chest_pain_and_ambulance', 'chd']",10,1.0
+harm_heavy,"['abdominal_pain_and_hr_missing', 'ckd_and_spo2_missing', 'tachypnea', 'unclassified_and_vitals_missing_ge_3', 'tachycardia', 'htn', 'dm', 'hypoxia', 'chest_pain_and_ambulance', 'chd']",10,1.0
+provenance_heavy,"['abdominal_pain_and_hr_missing', 'ckd_and_spo2_missing', 'unclassified_and_vitals_missing_ge_3', 'tachypnea', 'htn', 'tachycardia', 'dm', 'hypoxia', 'chest_pain_and_ambulance', 'chd']",10,1.0
+artifact_strict,"['abdominal_pain_and_hr_missing', 'ckd_and_spo2_missing', 'unclassified_and_vitals_missing_ge_3', 'tachypnea', 'htn', 'tachycardia', 'dm', 'hypoxia', 'chest_pain_and_ambulance', 'chd']",10,1.0
+equal_positive,"['abdominal_pain_and_hr_missing', 'ckd_and_spo2_missing', 'unclassified_and_vitals_missing_ge_3', 'htn', 'dm', 'tachypnea', 'tachycardia', 'hypoxia', 'chd', 'chest_pain_and_ambulance']",10,1.0

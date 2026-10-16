@@ -1,0 +1,17 @@
+slice_name,nb8_harm,priority_score,has_clinical_evidence,has_error_guided_evidence,has_dual_evidence,discovery_evidence,harm_norm_for_repair,combined_evidence_multiplier
+arrival_mode_unknown,-0.545894945165911,0.992564666,True,False,False,clinical_supported,0.05,1.0
+back_pain,-0.1669889446402982,0.678386536,True,False,False,clinical_supported,0.05,1.0
+abdominal_pain_and_hr_missing,0.2907546821246221,0.446082558,True,True,True,dual_supported_overlap,1.0,1.5
+tachypnea,0.1642876388296901,0.402263662,True,False,False,clinical_supported,0.5650386698133164,1.0
+fever_temp,-0.01959352931208841,0.385323185,True,False,False,clinical_supported,0.05,1.0
+chest_pain_and_ambulance,0.08708174419474088,0.313678589,True,False,False,clinical_supported,0.29950246564702354,1.0
+headache,-0.01718055592515111,0.270844579,True,False,False,clinical_supported,0.05,1.0
+ckd_and_spo2_missing,0.11076763964200648,0.251441101,True,True,True,dual_supported_overlap,0.38096597046210146,1.5
+cough,-0.13666514984347616,0.24097231,True,False,False,clinical_supported,0.05,1.0
+chd,0.07490304788371786,0.217281693,True,False,False,clinical_supported,0.25761596455259567,1.0
+tachycardia,0.10554655474367754,0.19527119,True,False,False,clinical_supported,0.36300895989849824,1.0
+htn,0.08782522564225426,0.185322151,True,False,False,clinical_supported,0.3020595403674737,1.0
+unclassified_and_vitals_missing_ge_3,0.04072350782700785,0.183437764,True,True,True,dual_supported_overlap,0.1400613999727547,1.5
+hypoxia,0.09027836483895671,0.182747428,True,False,False,clinical_supported,0.31049668462522634,1.0
+dm,0.08410690661273529,0.181945148,True,False,False,clinical_supported,0.28927103081588806,1.0
+pneumonia,0.05222629171734966,0.113595334,True,False,False,clinical_supported,0.1796232182254752,1.0

@@ -1,0 +1,5 @@
+method,repairability_precision,clinical_plausibility,coverage,mean_harm,worst_slice_recall,harm_per_slice
+AFISP_inspired,0.0,0.0,1.0,0.0,1.0,0.5645303408625599
+BASiC_ASAP_repair_eligible,1.0,0.9555555555555555,0.19000825033885316,0.48777678744974595,0.9197318226123675,1.0
+SliceFinder_style,1.0,1.0,0.0,1.0,0.0,0.16919294041650204
+SliceLine_style,1.0,1.0,0.4236843656078733,0.8569416644990476,0.6779663227577466,0.0
