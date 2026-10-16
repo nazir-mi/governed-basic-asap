@@ -24,4 +24,12 @@ The primary locked-test threshold is 0.315, not the 0.48 threshold from a differ
 
 These editorial corrections do not resolve the separate fold/selection-log alignment concern described in `REVIEW_STATUS.md`. The historical attribute-free extension remains excluded; no new corrected fairness result is claimed.
 
+## Internal versus external effect attribution
+
+`Results/governed_leakage_safe/internal_fold_mean_effects.csv` contains BASiC/ASAP minus ERM arithmetic differences between the five stored outer-fold means. In LR, RF, XGBoost and LightGBM order, sensitivity changes are +0.0269, +0.0145, +0.0078 and +0.0058; AUPRC changes are −0.0045, −0.0054, −0.0036 and −0.0045; and Brier changes are +0.0015, +0.0006, +0.0005 and +0.0008. These are neither pooled-OOF nor external-site effects.
+
+The previous manuscript range 0.0065–0.0581 was attributed to internal sensitivity but came from the adult external-site comparison. The corrected internal range is 0.0058–0.0269. This is a cohort-attribution correction from existing saved metrics, not a changed outcome or experiment rerun. External-site tables remain withheld under the repository-sharing policy.
+
+The primary grouped transport implementation differs from the primary locked-test ECE10 convention: it uses an encounter-count-weighted absolute error over quantile bins. The revised Methods distinguishes these stage-specific calibration summaries rather than claiming a single interchangeable ECE implementation.
+
 Table/figure numbers refer to the DTC3 manuscript revision and should be reconciled again if the manuscript is renumbered.

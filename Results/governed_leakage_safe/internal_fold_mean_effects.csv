@@ -1,0 +1,5 @@
+model,aggregation,folds,delta_Sensitivity,delta_AUPRC,delta_Brier
+Logistic Regression,difference_between_five_outer_fold_means,5,0.026908576814326013,-0.004528185150686759,0.0015072523882310174
+Random Forest,difference_between_five_outer_fold_means,5,0.014546025761859926,-0.005368191335724415,0.0006361847099753404
+XGBoost,difference_between_five_outer_fold_means,5,0.007775683317624904,-0.003559942506097924,0.000531503558158869
+LightGBM,difference_between_five_outer_fold_means,5,0.005796418473138498,-0.004516646416689141,0.0008499657377290248
