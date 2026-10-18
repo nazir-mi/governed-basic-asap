@@ -1,7 +1,7 @@
-# Historical registry, not completed independent clinician review
+# Clinical slice registry
 
-`approved_slice_registry_FINAL.csv` is the original **29-row frozen registry** used by the archived workflow. The filename is historical. It contains slice-level summaries and qualitative judgments, not patient-level membership.
+`approved_slice_registry_FINAL.csv` contains the 29-row development registry used by the analysis workflow. Each row describes a candidate clinical slice. The file contains slice-level summaries and annotations, rather than patient membership records.
 
-`manual_plausibility`, `artifact_flag`, `redundancy_flag`, `final_accept`, and related columns preserve original annotations. They must not be represented as completed duplicate independent ratings, rubric scores or formal adjudication. New review responses are private and are not supplied here.
+Columns such as `manual_plausibility`, `artifact_flag`, `redundancy_flag` and `final_accept` record the development-stage judgments and governance decisions used in the workflow. These annotations are not independent clinical-validation scores.
 
-The later clinician questionnaire has 26 definitions; it is not interchangeable with this historical 29-row registry. Excluded temperature rules, aliases, and stage-specific eligibility contribute to differing candidate counts. Refer to the code and stage-specific tables rather than inferring a single common slice count from filenames.
+Candidate counts differ across analysis stages because eligibility checks, temperature-rule exclusions and redundancy control remove or combine definitions. Use the stage-specific tables and code when interpreting the number of candidates, qualified slices and repair targets.

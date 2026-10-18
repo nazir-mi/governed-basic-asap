@@ -1,35 +1,34 @@
-# Evaluation metric reporting map
+# Evaluation metrics
 
-The primary Kaggle locked-test run uses seed 2026. Its stored outputs are in `Results/confirmatory/locked_holdout_global_results.csv`; `primary_locked_test_calibration.csv` is a compact transcription of those rows, not a rerun.
+The primary locked-test analysis uses seed 2026. The file paths below connect each reported measure to its analysis stage.
 
-## Reported evaluation measures
-
-| Measure | Manuscript location | Stored evidence |
+| Measure | Manuscript location | Supporting file |
 | --- | --- | --- |
 | Global AUROC, AUPRC, Brier score and recall | Section 4.5 and Table 9 | `Results/confirmatory/locked_holdout_global_results.csv` |
-| Calibration intercept and slope | Section 3.8 definitions; Section 4.5 and Table 9 values | The same primary-seed global rows and compact calibration CSV |
-| ECE10 | Section 3.8 implementation; Table 9 | `ECE10` in the same rows |
+| Calibration intercept, slope and ECE10 | Sections 3.8 and 4.5; Table 9 | Primary-seed global rows and `primary_locked_test_calibration.csv` |
 | Principal-slice AUPRC and Brier score | Section 4.5 and Table 9 | `Results/confirmatory/locked_holdout_slice_results.csv` |
-| Profile-grouped internal summaries | Section 4.6; stage-specific analysis | `Results/governed_leakage_safe/internal_pooled_oof_results.csv` and `internal_outer_fold_results.csv` |
-| RIPAS transported/recalibrated model summaries | Section 4.6 and Figures 5–6 | Controlled local outputs; not supplied in this repository pending permission |
-| NHAMCS model summaries | Section 4.6 and Table 11 | `Results/nhamcs_external_validation/nhamcs_external_results.csv` |
+| Profile-grouped internal performance | Section 4.6 | `Results/governed_leakage_safe/internal_pooled_oof_results.csv` and `internal_outer_fold_results.csv` |
+| RIPAS transport and recalibration | Section 4.6; Figures 5–6 | Restricted external-validation outputs; see `DATA_SHARING.md` |
+| NHAMCS external performance | Section 4.6; Table 11 | `Results/nhamcs_external_validation/nhamcs_external_results.csv` |
+| Fixed-registry robustness | Table 12 and Figure 8 | `Results/attribute_free_corrected/` |
+| Concealed-rule recovery and repair | Figure 9 | `Results/attribute_free_historical/concealed_group_experiment_summary.csv` |
 
-`calibration_summary` in `Code/confirmatory_nested_holdout.py` fits a logistic regression of the binary outcome on the logit of clipped predicted probabilities; its fitted intercept and coefficient are the reported calibration intercept and slope. The code uses `calibration_curve(..., n_bins=10, strategy="quantile")` and the unweighted mean absolute difference between the returned observed and mean predicted bin risks for `ECE10`. Tied probabilities can produce fewer than ten nonempty bins. This implementation is not a claim of a universal binning convention. Ideal intercept and slope values are 0 and 1, and smaller ECE10 is better.
+## Locked-test calibration
 
-Figure 6 shows mean transported risk versus observed RIPAS prevalence, not a reliability curve and not the complete intercept/slope/error parameter table. Full RIPAS-derived tables remain withheld under `DATA_SHARING.md`.
+`calibration_summary` in `Code/confirmatory_nested_holdout.py` regresses the binary outcome on the logit of clipped predicted probabilities. The fitted intercept and coefficient are the reported calibration intercept and slope. Ideal values are 0 and 1.
 
-## Reporting corrections dated 16 October 2026
+The implementation calls `calibration_curve(..., n_bins=10, strategy="quantile")` and reports the unweighted mean absolute difference between observed and predicted bin risks as ECE10. Tied probabilities can produce fewer than ten nonempty bins. Lower ECE10 is better.
 
-The primary locked-test threshold is 0.315, not the 0.48 threshold from a different historical operating-point analysis. The repaired calibration slope is 1.00614, not 1.00006. The original stored results were not changed. The manuscript now includes intercept and ECE10 rows so that the evaluation methods and displayed results can be traced directly.
+The primary operating threshold is 0.315. The repaired-model calibration slope is 1.00614. The compact calibration CSV selects the corresponding seed-2026 values from the global-results table.
 
-The earlier editorial corrections were followed by a new fold-aligned attribute-free rerun. Its corrected aggregates are in `Results/attribute_free_corrected/`; superseded values are separated from the default comparison. See `ATTRIBUTE_FREE_CORRECTION.md` and `REVIEW_STATUS.md`.
+## Grouped and external analyses
 
-## Internal versus external effect attribution
+The grouped transport workflow uses an encounter-count-weighted absolute error over quantile bins, whereas locked-test ECE10 uses an unweighted bin mean. These stage-specific summaries are not interchangeable.
 
-`Results/governed_leakage_safe/internal_fold_mean_effects.csv` contains BASiC/ASAP minus ERM arithmetic differences between the five stored outer-fold means. In LR, RF, XGBoost and LightGBM order, sensitivity changes are +0.0269, +0.0145, +0.0078 and +0.0058; AUPRC changes are −0.0045, −0.0054, −0.0036 and −0.0045; and Brier changes are +0.0015, +0.0006, +0.0005 and +0.0008. These are neither pooled-OOF nor external-site effects.
+Figure 6 compares mean transported risk with observed RIPAS prevalence. It is not a reliability curve or a complete calibration parameter table.
 
-The previous manuscript range 0.0065–0.0581 was attributed to internal sensitivity but came from the adult external-site comparison. The corrected internal range is 0.0058–0.0269. This is a cohort-attribution correction from existing saved metrics, not a changed outcome or experiment rerun. External-site tables remain withheld under the repository-sharing policy.
+`Results/governed_leakage_safe/internal_fold_mean_effects.csv` contains BASiC/ASAP-minus-ERM differences between five outer-fold means. In LR, RF, XGBoost and LightGBM order, sensitivity differences are +0.0269, +0.0145, +0.0078 and +0.0058; AUPRC differences are −0.0045, −0.0054, −0.0036 and −0.0045; Brier differences are +0.0015, +0.0006, +0.0005 and +0.0008. These are internal fold-mean effects, not pooled-OOF or external-site effects.
 
-The primary grouped transport implementation differs from the primary locked-test ECE10 convention: it uses an encounter-count-weighted absolute error over quantile bins. The revised Methods distinguishes these stage-specific calibration summaries rather than claiming a single interchangeable ECE implementation.
+## Direction of benefit
 
-Table 12 and Figure 8 now use the corrected attribute-free rerun. Figure 9 reports the separate historical concealed-rule construct experiment. Other stage-specific table numbers and numerical outputs are retained.
+Higher AUROC, AUPRC and sensitivity indicate better performance on their respective measures. Lower Brier score, calibration error and CVaR log-loss are preferable. A sensitivity increase can coexist with poorer AUPRC or Brier score, so repair must be interpreted across all reported endpoints and the specified global tolerances.

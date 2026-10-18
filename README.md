@@ -1,45 +1,47 @@
-# Governed BASiC/ASAP research materials
+# Governed BASiC/ASAP
 
-Analysis code, output-free notebooks, slice-registry metadata, methodological documentation and screened non-RIPAS aggregate tables supporting governed hidden-failure slice discovery and targeted repair for emergency-department admission prediction.
+BASiC/ASAP is an auditable framework for identifying clinically interpretable subgroups in which emergency-department admission models underperform and evaluating targeted model repair. It combines clinical rules with error-guided slice discovery, applies explicit eligibility checks, and prioritizes qualified slices for weighted retraining.
 
-BASiC means Bias-aware Auditable Slices in Clinical Pre-processing. ASAP means Auditable Slice Acceptance Protocol.
+BASiC stands for **Bias-aware Auditable Slices in Clinical Pre-processing**. ASAP stands for **Auditable Slice Acceptance Protocol**.
 
-## Scope
+## Research overview
 
-This repository is maintained by `nazirkaoje777-dotcom`. The public-release documentation was prepared on 18 October 2026. It replaces a separate journal supplementary-file bundle with versioned shareable research materials. It is not a public patient dataset and does not contain every manuscript result: RIPAS-derived outputs are withheld. The manuscript Data Availability Statement identifies the exact supporting commit.
+The framework separates finding a poorly performing subgroup from deciding whether that subgroup is a credible intervention target. Clinical plausibility, stability, artifact checks and redundancy control inform eligibility. Repair influence combines normalized harm (0.60), dual-source provenance (0.30) and normalized support (0.10).
 
-## Contents
+Evaluation covers logistic regression, Random Forest, XGBoost and LightGBM, with global performance, slice-level performance, tail loss and calibration reported separately. The study includes internal evaluation and external validation using RIPAS and NHAMCS cohorts. Targeted weighting is evaluated as a redistribution of predictive utility; improvement in every model or metric is not assumed.
 
-- `Code/`: analysis scripts, including the fold-aligned attribute-free evaluation in `Code/attribute_free/`.
-- `basic_slice_prem/Notebooks/`: ten analysis notebooks with outputs, attachments and execution metadata removed.
-- `Registry/`: slice-level registry metadata and documented qualitative labels, not individual clinician questionnaire responses or adjudications.
-- `Results/`: selected non-RIPAS aggregate tables grouped by analysis. Mixed and negative findings are retained.
-- `Figures/attribute_free/`: vector figures for robustness and construct validation.
-- `Documentation/`: execution requirements, parameters, output mapping, provenance and sharing boundaries.
-- `RELEASE_MANIFEST.csv` and `tools/verify_release.py`: file sizes, checksums and an automated disclosure/integrity screen.
+## Repository contents
 
-Start with `Documentation/RUN_GUIDE.md`. `Documentation/MANUSCRIPT_OUTPUT_MAP.csv` identifies public coverage and omissions for each manuscript analysis. Statistical implementation and evidence boundaries are described in `Documentation/REVIEW_STATUS.md`.
+| Directory | Contents |
+| --- | --- |
+| `Code/` | Analysis, comparator, repair and validation scripts |
+| `basic_slice_prem/Notebooks/` | Notebooks for preprocessing, discovery and governance analyses |
+| `Registry/` | Clinical slice definitions and development annotations |
+| `Results/` | Aggregate tables organized by analysis |
+| `Figures/attribute_free/` | Vector figures for robustness and construct validation |
+| `Documentation/` | Run instructions, parameters, metric definitions and manuscript output map |
 
-## Analysis provenance
+Start with the [run guide](Documentation/RUN_GUIDE.md). The [manuscript output map](Documentation/MANUSCRIPT_OUTPUT_MAP.csv) links tables and figures to their supporting files. See the [evaluation design](Documentation/REVIEW_STATUS.md) for the role of each analysis and the [attribute-free protocol](Documentation/ATTRIBUTE_FREE_CORRECTION.md) for the fixed-registry robustness comparison.
 
-The folders retain their established names so that existing scripts and provenance remain usable. `Results/attribute_free_corrected/` supplies the manuscript-supporting fixed-registry robustness evaluation; `Results/attribute_free_historical/` contains a labelled superseded summary and the separate concealed-clinical-rule construct summary. They are not interchangeable. The joint robustness endpoint was not met in any of the four model families.
+## Data access
 
-Discovery/comparator and full-cohort repair outputs are exploratory; locked-holdout and grouped analyses reduce fitting/selection leakage but use a registry developed from the same source cohort. The comparator protocol exercise is not a claim that every method is an official turnkey implementation. No analysis establishes demographic fairness, universal repair benefit, patient-level independence, prospective clinical effectiveness or deployment readiness. Detailed provenance is retained for traceability, not presented as new experimental reproduction.
+Obtain the Kaggle source data from the [original dataset record](https://www.kaggle.com/datasets/maalona/hospital-triage-and-patient-history-data) and NHAMCS public-use data from [CDC/NCHS](https://www.cdc.gov/nchs/nhamcs/). RIPAS data and derived files require institutional and data-custodian authorization and are not distributed here. Patient-level data are not included. See [data access and reuse](Documentation/DATA_SHARING.md).
 
-## Materials not released
+## File verification
 
-No patient records, row-level outcomes or predictions, row indexes, profile identifiers, membership matrices, fold/selection assignments, fitted models, caches or runtime outputs are included. All RIPAS-derived result files and mixed manifests containing them remain excluded. Clinician responses, supervisor comments, correspondence, draft manuscripts, approval documents and third-party paper PDFs are also excluded.
+`RELEASE_MANIFEST.csv` records file sizes and SHA-256 checksums. To check the files, run:
 
-Obtain Kaggle data independently from the [original dataset record](https://www.kaggle.com/datasets/maalona/hospital-triage-and-patient-history-data), and NHAMCS public-use records from [CDC/NCHS](https://www.cdc.gov/nchs/nhamcs/). Kaggle redistribution rights have not been established; public accessibility does not authorize mirroring source records. RIPAS access requires the responsible institution/data custodian's permissions and cannot be granted by this repository. See `Documentation/DATA_SHARING.md`.
+```bash
+python tools/verify_release.py
+```
 
-## Verification and citation
+The check verifies file integrity and applies basic disclosure checks; it does not rerun the experiments. The analysis scripts require the inputs described in the run guide.
 
-Run `python tools/verify_release.py` from the repository root. This is a disclosure/integrity check, not institutional approval, an anonymity guarantee or an experimental rerun. Reproduction requires independently obtained authorized inputs and generated local intermediates.
+## Contact
 
-Cite the exact commit named in the manuscript rather than assuming the moving `main` branch is the submitted version. The screened repository is intended for public access; a username-bearing repository is not an anonymous review archive.
+Nazir Muhammad Ilyasu  
+School of Digital Science, Universiti Brunei Darussalam  
+Email: [nazirkaoje777@gmail.com](mailto:nazirkaoje777@gmail.com)  
+Institutional email: [24h1711@ubd.edu.bn](mailto:24h1711@ubd.edu.bn)
 
-## Reuse
-
-Public visibility does not imply an open-source licence or permission to redistribute source data. No blanket licence is assigned to this mixed collection. Applicable author/institutional rights and third-party licences remain in force; contact the corresponding author where reuse requires permission.
-
-Research contact: Nazir Muhammad Ilyasu, School of Digital Science, Universiti Brunei Darussalam; 24h1711@ubd.edu.bn.
+Repository: https://github.com/nazir-mi/governed-basic-asap

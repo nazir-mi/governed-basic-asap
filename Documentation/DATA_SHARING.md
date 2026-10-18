@@ -1,27 +1,19 @@
-# Repository sharing scope
+# Data access and reuse
 
-The public repository contains screened research code and aggregate outputs, not a public patient dataset. Public visibility was requested by the corresponding author. That request does not expand rights over third-party or institutionally controlled data, which remain excluded.
+This repository provides analysis code, clinical slice definitions, methodological documentation and aggregate tables. CSV tables can be opened in spreadsheet software. The [manuscript output map](MANUSCRIPT_OUTPUT_MAP.csv) identifies the files available for each analysis.
 
-## Included materials
+## Source data
 
-Analysis scripts, output-free notebooks, slice-level registry annotations, methodological documentation, selected non-RIPAS aggregate result tables and vector figures are included. Tables are supplied in CSV format for direct reading in spreadsheet software. Source spreadsheets and serialized runtime files are not needed in the public package.
+- **Kaggle:** obtain the hospital triage and patient history data from the [original provider](https://www.kaggle.com/datasets/maalona/hospital-triage-and-patient-history-data). Source records and cleaned encounter-level derivatives are not redistributed. Users must check the provider's current terms before use.
+- **NHAMCS:** obtain the public-use emergency-department files and documentation from [CDC/NCHS](https://www.cdc.gov/nchs/nhamcs/).
+- **RIPAS:** data and derived result files are subject to institutional and data-custodian restrictions and are not distributed through this repository. Requests require the applicable permissions and approvals. Contact the corresponding author for the appropriate access route; access cannot be guaranteed.
 
-The manuscript output map identifies public coverage and omissions. Provenance distinguishes the manuscript-supporting attribute-free evaluation from superseded summaries and the separate construct-validation experiment. Negative and mixed findings are retained.
+Patient-level predictions, membership matrices and fold assignments are generated locally from authorized inputs and must remain outside the public repository. Research ethics approval and informed consent do not by themselves confer redistribution rights.
 
-## Excluded materials
+## Reuse
 
-- RIPAS records, outcomes, predictions, profile hashes, membership matrices, subgroup outputs and overall result tables; mixed manifests containing RIPAS summaries; data keys, approval letters and signatures.
-- Raw or cleaned Kaggle records, encounter-level diagnostic rows, examples, OOF prediction tables and membership matrices. Kaggle redistribution permission has not been established.
-- NHAMCS source records, which must be obtained independently from CDC/NCHS.
-- Row indexes, fold assignments, inner selection-role assignments, individual predictions, trained models, caches, serialized objects and generated local outputs.
-- Clinician identifiers, individual ratings, free text and adjudication records; supervisor comments, correspondence, manuscript drafts and third-party article PDFs.
+No repository-wide licence has been assigned. Applicable author and institutional rights and third-party terms remain in force. Contact Nazir Muhammad Ilyasu at nazirkaoje777@gmail.com or 24h1711@ubd.edu.bn about reuse that requires permission.
 
-RIPAS research ethics approval and informed consent are not treated as permission to publish data or derived result files on GitHub. Requests for restricted materials must be referred to the corresponding author and the responsible institution/data custodian; availability is not promised without the required permissions.
+## Adding files
 
-## Integrity and future additions
-
-`RELEASE_MANIFEST.csv` lists files, byte sizes and SHA-256 hashes. Run `python tools/verify_release.py` to check the manifest and project disclosure rules. The screen checks recognized record-level columns, notebook outputs, credential patterns, personal absolute paths and small explicit counts. It is not a substitute for institutional disclosure review or a guarantee against re-identification.
-
-The pre-release Git history was checked as well as the current snapshot. Future additions must be screened before committing: deleting a restricted file from the current branch does not remove it from history. Never commit runtime output directories or RIPAS-derived files without explicit redistribution permission.
-
-No blanket open-source or data licence is assigned to the collection. Public access is distinct from reuse permission; third-party licences and author/institutional rights remain applicable.
+Before contributing, check that files contain no patient-level data, credentials or unauthorized derived outputs. `RELEASE_MANIFEST.csv` and `tools/verify_release.py` support integrity and basic disclosure checks; they do not replace an institutional data-release decision.

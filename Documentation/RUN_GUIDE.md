@@ -1,10 +1,16 @@
-# Inputs and reproduction boundaries
+# Running the analyses
 
-Most `Results/` folders retain stored historical outputs. `Results/attribute_free_corrected/` contains the new verified fold-aligned rerun and must be distinguished from the superseded historical comparison. Packages in `requirements.txt` are compatibility ranges (with selected packages pinned), not the exact original environment lockfile. No clean-environment end-to-end reproduction is claimed.
+The repository contains stage-specific scripts and aggregate results. The fixed-registry attribute-free robustness comparison is in `Code/attribute_free/` and `Results/attribute_free_corrected/`. Each analysis requires the source data and local intermediates described below.
 
-## Local authorized inputs â€” ignored by git
+## Environment
 
-```
+Use Python 3.12. Install the packages in the root `requirements.txt` for the main analyses. Use the pinned versions in `Code/attribute_free/requirements.txt` for the attribute-free comparison. The root requirements specify compatibility ranges rather than a complete environment lockfile.
+
+## Input layout
+
+Place authorized source data and reconstructed intermediates in the following local paths:
+
+```text
 basic_slice_prem/
   Data/Raw/
     Kaggle_Triage_Modified.xlsx
@@ -15,23 +21,30 @@ basic_slice_prem/
     slice_membership.csv
 ```
 
-The modified workbook is a historical intermediate, not necessarily the original Kaggle file. Preserve preprocessing lineage and row order. Copy the frozen registry from `Registry/` to the private runtime folder where required. No encounter-level sample data is fabricated or supplied.
+`Kaggle_Triage_Modified.xlsx` is a preprocessing intermediate, not the original downloaded source file. Follow the notebooks to construct the analysis inputs, preserving row order. Copy the frozen registry from `Registry/` to the runtime location required by each script. Slice membership must be reconstructed from the registry and aligned with the encounter data.
 
-Run notebooks with working directory `basic_slice_prem/Notebooks/`, in numerical order including 05b for adapted-method summaries. They retain historical intermediate analyses and local dependencies. Rebuilding the frozen qualitative review judgments requires their historical annotations; numeric rules alone do not generate them.
+## Discovery and governance
+
+Run notebooks from `basic_slice_prem/Notebooks/` in numerical order, including notebook 05b for adapted comparator summaries. The registry's qualitative development annotations are inputs; they cannot be regenerated from numeric eligibility rules alone.
+
+## Repair and validation scripts
 
 Run standalone scripts from the repository root:
 
-- `python Code/confirmatory_nested_holdout.py`: derived cohort, reconstructed membership and frozen registry.
-- `python Code/faithful_comparators.py`: diagnostic training rows, plus `basic_slice_prem/Results/table_X_comparative_method_summary.csv` for reference-only adapted results. Generate that aggregate with the notebooks or copy the supplied same-named comparative aggregate into this local runtime path.
-- `python Code/governed_leakage_safe_evaluation.py`: primary grouped workflow; requires local authorized RIPAS input set via `RIPAS_DATA_PATH`. The script generates sensitive row-level predictions locally. Never upload its runtime output folder. Use a fresh output directory for each full run because prediction files are appended.
-- `python Code/multimodel_external_validation.py`: earlier/secondary nested and transport workflow, also requiring authorized `RIPAS_DATA_PATH`.
-- `python Code/nhamcs_external_validation.py`: separately obtained CDC public-use file set via `NHAMCS_DATA_PATH`; consumes the preceding script's saved source rankings/thresholds. Its imported base module also requires `RIPAS_DATA_PATH`. Without authorized private inputs those dependencies cannot be reproduced from this repository alone.
+| Script | Required inputs and dependencies |
+| --- | --- |
+| `Code/confirmatory_nested_holdout.py` | Derived cohort, reconstructed membership and frozen registry |
+| `Code/faithful_comparators.py` | Diagnostic training data; the comparative aggregate at `basic_slice_prem/Results/table_X_comparative_method_summary.csv` is used for reference |
+| `Code/governed_leakage_safe_evaluation.py` | Derived source cohort and authorized RIPAS input specified by `RIPAS_DATA_PATH` |
+| `Code/multimodel_external_validation.py` | Source cohort and authorized RIPAS input specified by `RIPAS_DATA_PATH` |
+| `Code/nhamcs_external_validation.py` | CDC public-use input specified by `NHAMCS_DATA_PATH` and saved source-model rankings and thresholds from the preceding script |
 
-The corrected attribute-free driver is supplied in `Code/attribute_free/`. It performs fresh training-only selection and does not import settings from the historical log. See `ATTRIBUTE_FREE_CORRECTION.md`.
+The comparator reference aggregate can be generated by the notebooks or copied from the supplied same-named table in `Results/comparative/`. The NHAMCS script imports a module that also requires `RIPAS_DATA_PATH`; that dependency needs authorized local access.
 
-Changes during packaging were limited to local path constants, notebook metadata/output removal and documentation. Statistical logic was not silently amended. Numerical tables were copied unchanged. Provenance and distributed-file hashes are included.
+Use a fresh output directory for a full grouped-evaluation run because prediction files are appended. Keep encounter-level runtime files outside the public repository. Data-access conditions are described in [DATA_SHARING.md](DATA_SHARING.md).
 
+## Attribute-free robustness
 
-## Corrected attribute-free rerun
+Follow [ATTRIBUTE_FREE_CORRECTION.md](ATTRIBUTE_FREE_CORRECTION.md) for the command sequence, tuning grid and uncertainty procedure. All weighting arms use the same profile-grouped outer folds and training-only repair selection. Outputs are written to the ignored `Local_Outputs/attribute_free_fold_aligned/` directory.
 
-Use `Code/attribute_free/resolve_attribute_free.py`, not an imported historical selection log. The full command order, inputs, versions and interpretation limits are in `ATTRIBUTE_FREE_CORRECTION.md`. Local encounter-level outputs must remain in ignored `Local_Outputs/`.
+The manuscript output map identifies the aggregate files for each reported analysis. Some workflows require restricted inputs, so a complete end-to-end run cannot be performed using public repository files alone.

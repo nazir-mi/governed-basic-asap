@@ -1,8 +1,7 @@
-"""Fold-aligned, checkpointed re-evaluation; never replaces historical outputs.
+"""Profile-grouped evaluation of fixed-registry repair across model families.
 
-Run with the bundled Python. Patient/encounter-level audit files stay local.
-The fixed historical registry is a previously developed audit set, not a new
-independent discovery cohort. No demographic-fairness inference is made.
+Use Python 3.12 and the adjacent requirements file. Encounter-level outputs
+are written to Local_Outputs. The registry is fixed during evaluation.
 """
 from __future__ import annotations
 import os
