@@ -1,27 +1,27 @@
-# Conservative repository-sharing policy
+# Repository sharing scope
 
-This repository is private but remains a third-party cloud transfer. Private visibility is not a substitute for institutional permission.
+The public repository contains screened research code and aggregate outputs, not a public patient dataset. Public visibility was requested by the corresponding author. That request does not expand rights over third-party or institutionally controlled data, which remain excluded.
 
-## Included material
+## Included materials
 
-Only methodological code, output-free notebooks, historical slice-level annotations and screened non-RIPAS aggregate outputs are supplied. These are provided for private scholarly review, not relicensed as public-domain or open-source material. Author/institutional ownership and reuse terms must be confirmed before any broader public release.
+Analysis scripts, output-free notebooks, slice-level registry annotations, methodological documentation, selected non-RIPAS aggregate result tables and vector figures are included. Tables are supplied in CSV format for direct reading in spreadsheet software. Source spreadsheets and serialized runtime files are not needed in the public package.
 
-## Withheld material
+The manuscript output map identifies public coverage and omissions. Provenance distinguishes the manuscript-supporting attribute-free evaluation from superseded summaries and the separate construct-validation experiment. Negative and mixed findings are retained.
 
-- Every RIPAS record, prediction, membership, outcome, profile hash, detailed subgroup output and overall result table; no approval letter, data key or signature is uploaded.
-- Mixed analysis manifests containing RIPAS-derived summaries.
-- Raw and cleaned Kaggle records, intermediate diagnostic rows, row-level examples, OOF prediction tables and membership matrices; source redistribution rights remain unconfirmed.
-- NHAMCS raw records; obtain them from the official source.
-- Fitted models, caches and serialized objects, which have not been assessed for disclosure risk.
-- Clinician respondents' identifiers, ratings, free text, adjudication records and private review communications.
-- Supervisor feedback, correspondence, draft manuscripts and third-party article PDFs.
+## Excluded materials
 
-`WITHHELD_FILES.csv` identifies omissions from the previous candidate; the policy above also excludes material never admitted to that candidate. Non-inclusion of data must not be described as data being publicly downloadable from this repository.
+- RIPAS records, outcomes, predictions, profile hashes, membership matrices, subgroup outputs and overall result tables; mixed manifests containing RIPAS summaries; data keys, approval letters and signatures.
+- Raw or cleaned Kaggle records, encounter-level diagnostic rows, examples, OOF prediction tables and membership matrices. Kaggle redistribution permission has not been established.
+- NHAMCS source records, which must be obtained independently from CDC/NCHS.
+- Row indexes, fold assignments, inner selection-role assignments, individual predictions, trained models, caches, serialized objects and generated local outputs.
+- Clinician identifiers, individual ratings, free text and adjudication records; supervisor comments, correspondence, manuscript drafts and third-party article PDFs.
 
-## Future release checklist
+RIPAS research ethics approval and informed consent are not treated as permission to publish data or derived result files on GitHub. Requests for restricted materials must be referred to the corresponding author and the responsible institution/data custodian; availability is not promised without the required permissions.
 
-Obtain explicit confirmation of which RIPAS aggregate outputs may be placed on GitHub, whether privately or publicly; MHREC approval alone is not used as that authorization. Confirm the research-use and redistribution terms for Kaggle separately. Confirm author/institutional rights and an appropriate licence for original code and tables. Assess overlapping groups, derived rates and complementary counts before adding future outputs.
+## Integrity and future additions
 
-The automated screen flags explicit group/outcome counts between 1 and 9 where recognized, plus complementary counts where both n and events are supplied. This is a conservative project screen, not an institutional suppression rule or an anonymity guarantee.
+`RELEASE_MANIFEST.csv` lists files, byte sizes and SHA-256 hashes. Run `python tools/verify_release.py` to check the manifest and project disclosure rules. The screen checks recognized record-level columns, notebook outputs, credential patterns, personal absolute paths and small explicit counts. It is not a substitute for institutional disclosure review or a guarantee against re-identification.
 
-Do not add runtime output directories to git. A future accidentally committed restricted file must be treated as a disclosure incident even if subsequently deleted, because git history can retain it.
+The pre-release Git history was checked as well as the current snapshot. Future additions must be screened before committing: deleting a restricted file from the current branch does not remove it from history. Never commit runtime output directories or RIPAS-derived files without explicit redistribution permission.
+
+No blanket open-source or data licence is assigned to the collection. Public access is distinct from reuse permission; third-party licences and author/institutional rights remain applicable.
